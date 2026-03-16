@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function HomePage() {
     return (
         <section className="space-y-16">
@@ -67,32 +69,30 @@ export default function HomePage() {
                         </p>
 
                         <div className="mt-6">
-                            <a
+                            <Link
                                 href="/projects/led-traffic-light"
                                 className="inline-flex items-center gap-2 rounded-lg bg-emerald-500/10 border border-emerald-500/30 px-4 py-2 text-sm font-medium text-emerald-400 hover:bg-emerald-500/20 hover:border-emerald-500/50 transition-colors"
                             >
                                 View project tutorial
                                 <span aria-hidden="true">→</span>
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
             </div>
 
-            {/* ── All projects placeholder ──────────────────────────────────────── */}
-            <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                    <h3 className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-500">
-                        All Projects
-                    </h3>
-                    <span className="rounded-full bg-zinc-800 px-2.5 py-0.5 text-xs text-zinc-500 font-mono">
-                        1 project
-                    </span>
-                </div>
-                <p className="text-sm text-zinc-500 leading-relaxed">
-                    This section will list every project — each linking to a detailed page
-                    with steps, photos, and notes.
-                </p>
+            {/* ── All projects link ─────────────────────────────────────────────── */}
+            <div className="flex items-center justify-between">
+                <h3 className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-500">
+                    All Projects
+                </h3>
+                <Link
+                    href="/projects"
+                    className="inline-flex items-center gap-1.5 text-sm text-emerald-400 hover:text-emerald-300 transition-colors"
+                >
+                    Browse all
+                    <span aria-hidden="true">→</span>
+                </Link>
             </div>
 
         </section>
