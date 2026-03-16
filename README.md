@@ -4,6 +4,8 @@ A personal portfolio documenting my embedded systems learning journey — projec
 
 Built with Next.js 16 (App Router), TypeScript, and Tailwind CSS v4.
 
+**Live site:** https://miguels-build-log.vercel.app/
+
 ---
 
 ## Getting started
@@ -80,6 +82,12 @@ export default function NotesPage() {
 ## Adding a new project
 
 Add a new entry to the projects data source and create a corresponding route under `src/app/projects/[slug]/`.
+
+---
+
+## Deployment
+
+The site is deployed on [Vercel](https://vercel.com) and auto-deploys on every push to `main`.
 
 ---
 
