@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Miguel's Build Log
 
-## Getting Started
+A personal portfolio documenting my embedded systems learning journey — projects, build notes, and tutorials.
 
-First, run the development server:
+Built with Next.js 16 (App Router), TypeScript, and Tailwind CSS v4.
+
+---
+
+## Getting started
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install       # install dependencies (first time only)
+npm run dev       # start the dev server at http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Commands
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run dev       # start development server (Turbopack, with hot reload)
+npm run build     # production build — checks for TypeScript and lint errors
+npm run start     # run the production build locally (run build first)
+npm run lint      # run ESLint to catch code issues
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Project structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/
+│   ├── layout.tsx          # Root layout — site-wide header, nav, footer
+│   ├── page.tsx            # Home page  →  /
+│   ├── globals.css         # Global styles; Tailwind imported here
+│   ├── projects/
+│   │   ├── page.tsx        # Projects index  →  /projects
+│   │   └── [slug]/
+│   │       └── page.tsx    # Individual project  →  /projects/:slug
+│   └── about/
+│       └── page.tsx        # About page  →  /about
+public/                     # Static assets (images, icons) — referenced as /filename
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Where to update things
 
-## Deploy on Vercel
+| What | Where |
+|---|---|
+| Site title / meta description | `metadata` export in `src/app/layout.tsx` |
+| Nav links | `<nav>` in `src/app/layout.tsx` |
+| Footer text | `<footer>` in `src/app/layout.tsx` |
+| Global colors / fonts / CSS variables | `src/app/globals.css` |
+| Home page content | `src/app/page.tsx` |
+| Projects list | `src/app/projects/page.tsx` |
+| Individual project content | `src/app/projects/[slug]/page.tsx` |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Adding a new page
+
+Create a `page.tsx` file inside a folder under `src/app/`. The folder name becomes the URL.
+
+```
+src/app/notes/page.tsx  →  /notes
+```
+
+Minimal page template:
+
+```tsx
+export default function NotesPage() {
+    return (
+        <div>
+            <h1>Notes</h1>
+        </div>
+    );
+}
+```
+
+## Adding a new project
+
+Add a new entry to the projects data source and create a corresponding route under `src/app/projects/[slug]/`.
+
+---
+
+## Tech stack
+
+| Tool | Purpose |
+|---|---|
+| [Next.js 16](https://nextjs.org) | React framework with file-based routing |
+| [TypeScript](https://www.typescriptlang.org) | Type safety |
+| [Tailwind CSS v4](https://tailwindcss.com) | Utility-first styling |
+| [Geist](https://vercel.com/font) | Sans-serif and mono fonts |
