@@ -21,7 +21,7 @@ export default function AboutPage() {
                     Hey, I&apos;m Miguel
                 </h1>
 
-                {/* TODO: swap in a personal one-liner if you want something more specific */}
+                {/* TODO: Update at some point */}
                 <p className="text-base text-zinc-300 leading-relaxed">
                     I have a BS in Computer Science and build embedded systems and 3D printing
                     projects for fun because I genuinely love it.
@@ -33,7 +33,7 @@ export default function AboutPage() {
                 <h2 className="text-lg font-semibold text-zinc-100 border-b border-zinc-700 pb-2 mb-4">
                     Background
                 </h2>
-                {/* TODO: expand with your story — how long you've been building, what got you into hardware, etc. */}
+                {/* TODO: maybe revise and update. */}
                 <div className="space-y-3 text-zinc-300 leading-relaxed">
                     <p>
                         I got my CS degree and kept going. Hardware pulled me in because there&apos;s
@@ -89,7 +89,7 @@ export default function AboutPage() {
                             ["Microcontrollers", "Arduino (Elegoo Mega R3), PlatformIO"],
                             ["Languages", "C++, TypeScript"],
                             ["Circuit planning", "Tinkercad"],
-                            ["3D printing", "Bambu Lab P1S, P2s, and A1 Mini "],  // TODO: add your slicer and printer here
+                            ["3D printing", "Bambu Lab P1S, P2s, and A1 Mini "],  // TODO: add slicer here
                             ["IDEs", "CLion (embedded), WebStorm (web)"],
                             ["This site", "Next.js, Tailwind CSS, Vercel"],
                         ].map(([area, tools]) => (
@@ -108,7 +108,7 @@ export default function AboutPage() {
                 <h2 className="text-lg font-semibold text-zinc-100 border-b border-zinc-700 pb-2 mb-4">
                     What&apos;s next
                 </h2>
-                {/* TODO: update this list as your goals and upcoming projects evolve */}
+                {/* TODO: update this list as goals and upcoming projects evolve */}
                 <ul className="space-y-3">
                     {[
                         "Continuing to build out more Arduino projects",
@@ -131,7 +131,7 @@ export default function AboutPage() {
                 <h2 className="text-lg font-semibold text-zinc-100 border-b border-zinc-700 pb-2 mb-4">
                     Get in touch
                 </h2>
-                {/* TODO: add LinkedIn, email, or other links as needed */}
+                {/* TODO: update in the future */}
                 <div className="flex flex-col gap-3">
                     <a
                         href="https://github.com/miguel-wgu"
