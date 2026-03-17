@@ -64,7 +64,7 @@ export default function ProjectsPage() {
                         className="rounded-2xl border border-zinc-800 bg-zinc-900/50 overflow-hidden hover:border-zinc-700 transition-colors"
                     >
                         {/* Top accent bar */}
-                        <div className="h-px bg-gradient-to-r from-emerald-500 via-teal-400 to-transparent" />
+                        <div className="h-px bg-linear-to-r from-emerald-500 via-teal-400 to-transparent" />
 
                         <div className="p-7 space-y-4">
                             {/* Title row */}

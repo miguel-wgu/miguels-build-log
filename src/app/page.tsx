@@ -14,7 +14,7 @@ export default function HomePage() {
 
                 {/* Main headline with gradient accent */}
                 <h1 className="text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl leading-[1.05]">
-                    <span className="bg-gradient-to-br from-emerald-300 via-teal-300 to-emerald-500 bg-clip-text text-transparent">
+                    <span className="bg-linear-to-br from-emerald-300 via-teal-300 to-emerald-500 bg-clip-text text-transparent">
                         Miguel&apos;s
                     </span>{" "}
                     Build Log
@@ -47,7 +47,7 @@ export default function HomePage() {
 
                 <div className="rounded-2xl border border-zinc-800 bg-zinc-900/50 overflow-hidden hover:border-zinc-700 transition-colors">
                     {/* Top accent bar */}
-                    <div className="h-px bg-gradient-to-r from-emerald-500 via-teal-400 to-transparent" />
+                    <div className="h-px bg-linear-to-r from-emerald-500 via-teal-400 to-transparent" />
 
                     <div className="p-7">
                         <div className="flex items-start justify-between gap-4 flex-wrap">

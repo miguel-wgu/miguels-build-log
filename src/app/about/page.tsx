@@ -109,16 +109,18 @@ export default function AboutPage() {
                     What&apos;s next
                 </h2>
                 {/* TODO: update this list as your goals and upcoming projects evolve */}
-                <ul className="space-y-2">
+                <ul className="space-y-3">
                     {[
                         "Continuing to build out more Arduino projects",
                         "Learning to incorporate sensors: temperature, distance, motion",
                         "Exploring more complex C++ patterns for embedded code",
                         "Eventually moving beyond breadboards to custom PCBs",
                     ].map((item, i) => (
-                        <li key={i} className="flex gap-2.5 text-sm text-zinc-300">
-                            <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500" />
-                            {item}
+                        <li key={i} className="flex gap-4 border-l-2 border-emerald-500/40 bg-zinc-900/40 rounded-r-lg px-4 py-3 hover:border-emerald-500/70 hover:bg-zinc-900/60 transition-colors">
+                            <span className="text-xs font-mono text-emerald-500/60 mt-0.5 shrink-0">
+                                {String(i + 1).padStart(2, "0")}
+                            </span>
+                            <span className="text-sm text-zinc-300">{item}</span>
                         </li>
                     ))}
                 </ul>
@@ -147,7 +149,7 @@ export default function AboutPage() {
 
             {/* ── Projects CTA ─────────────────────────────────────────────────── */}
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900/50 overflow-hidden">
-                <div className="h-px bg-gradient-to-r from-emerald-500 via-teal-400 to-transparent" />
+                <div className="h-px bg-linear-to-r from-emerald-500 via-teal-400 to-transparent" />
                 <div className="p-7 flex items-center justify-between gap-4 flex-wrap">
                     <div>
                         <p className="text-sm font-medium text-zinc-100">See the work</p>
