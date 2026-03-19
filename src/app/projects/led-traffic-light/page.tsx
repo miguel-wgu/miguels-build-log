@@ -104,6 +104,16 @@ export default function LEDTrafficLightPage() {
                 </a>
             </div>
 
+            {/* ── Demo GIF ─────────────────────────────────────────────────────── */}
+            <div className="rounded-xl overflow-hidden border border-zinc-700 w-1/2 mx-auto">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                    src="https://raw.githubusercontent.com/miguel-wgu/LED_Traffic_Light/main/docs/LED%20Cycle.gif"
+                    alt="LED traffic light cycling through green, yellow, and red"
+                    className="w-full"
+                />
+            </div>
+
             {/* ── Overview ─────────────────────────────────────────────────────── */}
             <section>
                 <SectionHeading>Overview</SectionHeading>

@@ -6,8 +6,6 @@ Built with Next.js 16 (App Router), TypeScript, and Tailwind CSS v4.
 
 **Live site:** https://miguels-build-log.vercel.app/
 
-![LED traffic light cycling through red, yellow, and green](https://github.com/user-attachments/assets/6ae98880-1cfe-47ac-a31d-a5bfd24b55f5)
-
 ---
 
 ## Getting started

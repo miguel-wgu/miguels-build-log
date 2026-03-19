@@ -49,34 +49,50 @@ export default function HomePage() {
                     {/* Top accent bar */}
                     <div className="h-px bg-linear-to-r from-emerald-500 via-teal-400 to-transparent" />
 
-                    <div className="p-7">
-                        <div className="flex items-start justify-between gap-4 flex-wrap">
-                            <div className="space-y-1">
-                                <span className="text-xs font-mono text-emerald-400">Project 01</span>
-                                <h2 className="text-xl font-semibold text-zinc-100">
-                                    LED Traffic Light System
-                                </h2>
+                    <div className="p-7 flex flex-col sm:flex-row items-start gap-6">
+                        {/* Left: text content */}
+                        <div className="flex-1 min-w-0">
+                            <div className="flex items-start justify-between gap-4 flex-wrap">
+                                <div className="space-y-1">
+                                    <span className="text-xs font-mono text-emerald-400">Project 01</span>
+                                    <h2 className="text-xl font-semibold text-zinc-100">
+                                        LED Traffic Light System
+                                    </h2>
+                                </div>
+                                <div className="flex items-center gap-2 flex-wrap">
+                                    <span className="rounded-full border border-zinc-700 bg-zinc-800 px-2.5 py-1 text-xs text-zinc-400">
+                                        Arduino
+                                    </span>
+                                    <span className="rounded-full border border-yellow-500/30 bg-yellow-500/10 px-2.5 py-0.5 text-xs font-medium text-yellow-400">
+                                        In Progress
+                                    </span>
+                                </div>
                             </div>
-                            <span className="rounded-full border border-zinc-700 bg-zinc-800 px-2.5 py-1 text-xs text-zinc-400">
-                                Arduino
-                            </span>
+
+                            <p className="mt-4 text-sm text-zinc-200 leading-relaxed">
+                                An Arduino-based traffic light with a 3D printed housing. The
+                                tutorial covers hardware wiring, code walkthroughs, and lessons
+                                learned along the way.
+                            </p>
+
+                            <div className="mt-6">
+                                <Link
+                                    href="/projects/led-traffic-light"
+                                    className="inline-flex items-center gap-2 rounded-lg bg-emerald-500/10 border border-emerald-500/30 px-4 py-2 text-sm font-medium text-emerald-400 hover:bg-emerald-500/20 hover:border-emerald-500/50 transition-colors"
+                                >
+                                    View project tutorial
+                                    <span aria-hidden="true">→</span>
+                                </Link>
+                            </div>
                         </div>
 
-                        <p className="mt-4 text-sm text-zinc-200 leading-relaxed max-w-lg">
-                            An Arduino-based traffic light with a 3D printed housing. The
-                            tutorial covers hardware wiring, code walkthroughs, and lessons
-                            learned along the way.
-                        </p>
-
-                        <div className="mt-6">
-                            <Link
-                                href="/projects/led-traffic-light"
-                                className="inline-flex items-center gap-2 rounded-lg bg-emerald-500/10 border border-emerald-500/30 px-4 py-2 text-sm font-medium text-emerald-400 hover:bg-emerald-500/20 hover:border-emerald-500/50 transition-colors"
-                            >
-                                View project tutorial
-                                <span aria-hidden="true">→</span>
-                            </Link>
-                        </div>
+                        {/* Right: GIF — full width on mobile, fixed width beside text on sm+ */}
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                            src="https://raw.githubusercontent.com/miguel-wgu/LED_Traffic_Light/main/docs/LED%20Cycle.gif"
+                            alt="LED traffic light cycling through green, yellow, and red"
+                            className="w-full sm:w-28 rounded-lg shrink-0 sm:mt-1"
+                        />
                     </div>
                 </div>
             </div>
