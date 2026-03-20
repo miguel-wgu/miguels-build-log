@@ -31,16 +31,16 @@ npm run lint      # run ESLint to catch code issues
 ```
 src/
 ├── app/
-│   ├── layout.tsx          # Root layout — site-wide header, nav, footer
-│   ├── page.tsx            # Home page  →  /
-│   ├── globals.css         # Global styles; Tailwind imported here
-│   ├── projects/
-│   │   ├── page.tsx        # Projects index  →  /projects
-│   │   └── [slug]/
-│   │       └── page.tsx    # Individual project  →  /projects/:slug
-│   └── about/
-│       └── page.tsx        # About page  →  /about
-public/                     # Static assets (images, icons) — referenced as /filename
+│   ├── layout.tsx              # Root layout — site-wide header, nav, footer
+│   ├── page.tsx                # Home page  →  /
+│   ├── globals.css             # Global styles; Tailwind imported here
+│   ├── about/
+│   │   └── page.tsx            # About page  →  /about
+│   └── projects/
+│       ├── page.tsx            # Projects index  →  /projects
+│       └── led-traffic-light/
+│           └── page.tsx        # Project page  →  /projects/led-traffic-light
+public/                         # Static assets (images, icons) — referenced as /filename
 ```
 
 ---
@@ -55,7 +55,7 @@ public/                     # Static assets (images, icons) — referenced as /f
 | Global colors / fonts / CSS variables | `src/app/globals.css`                     |
 | Home page content                     | `src/app/page.tsx`                        |
 | Projects list                         | `src/app/projects/page.tsx`               |
-| Individual project content            | `src/app/projects/[slug]/page.tsx`        |
+| Individual project content            | `src/app/projects/[project-name]/page.tsx` |
 
 ---
 
@@ -81,7 +81,11 @@ export default function NotesPage() {
 
 ## Adding a new project
 
-Add a new entry to the projects data source and create a corresponding route under `src/app/projects/[slug]/`.
+Add a new entry to the `projects` array in `src/app/projects/page.tsx`, then create a new folder under `src/app/projects/` with a `page.tsx` inside it. The folder name becomes the URL slug.
+
+```
+src/app/projects/my-new-project/page.tsx  →  /projects/my-new-project
+```
 
 ---
 
@@ -98,4 +102,3 @@ The site is deployed on [Vercel](https://vercel.com) and auto-deploys on every p
 | [Next.js 16](https://nextjs.org)             | React framework with file-based routing |
 | [TypeScript](https://www.typescriptlang.org) | Type safety                             |
 | [Tailwind CSS v4](https://tailwindcss.com)   | Utility-first styling                   |
-| [Geist](https://vercel.com/font)             | Sans-serif and mono fonts               |

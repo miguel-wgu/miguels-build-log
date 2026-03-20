@@ -63,8 +63,8 @@ export default function HomePage() {
                                     <span className="rounded-full border border-zinc-700 bg-zinc-800 px-2.5 py-1 text-xs text-zinc-400">
                                         Arduino
                                     </span>
-                                    <span className="rounded-full border border-yellow-500/30 bg-yellow-500/10 px-2.5 py-0.5 text-xs font-medium text-yellow-400">
-                                        In Progress
+                                    <span className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-0.5 text-xs font-medium text-emerald-400">
+                                        Complete
                                     </span>
                                 </div>
                             </div>
