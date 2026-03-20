@@ -2,6 +2,7 @@
 // into the page's <head> automatically — no need to write HTML head tags yourself.
 // This overrides the site-wide defaults set in layout.tsx for just this page.
 import type { Metadata } from "next";
+import ClickableImage from "./ClickableImage";
 
 export const metadata: Metadata = {
     title: "LED Traffic Light System — Miguel's Build Log",
@@ -105,7 +106,7 @@ export default function LEDTrafficLightPage() {
             </div>
 
             {/* ── Demo GIF ─────────────────────────────────────────────────────── */}
-            <div className="rounded-xl overflow-hidden border border-zinc-700 w-1/2 mx-auto">
+            <div id="demo-gif" className="rounded-xl overflow-hidden border border-zinc-700 w-1/2 mx-auto">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                     src="https://raw.githubusercontent.com/miguel-wgu/LED_Traffic_Light/main/docs/LED%20Cycle.gif"
@@ -265,18 +266,55 @@ export default function LEDTrafficLightPage() {
                 <h3 className="text-sm font-medium text-zinc-200 uppercase tracking-wider mt-6 mb-3">
                     Steps (repeat for each LED)
                 </h3>
-                <ol className="space-y-3 text-zinc-300 leading-relaxed list-none">
+                <ol className="space-y-6 text-zinc-300 leading-relaxed list-none">
                     {[
-                        "Place the LED on the breadboard. LEDs are polarized — the longer leg (anode, +) connects toward the Arduino; the shorter leg (cathode, −) connects to ground.",
-                        "Connect a 220 ohm resistor between the LED's anode and the Arduino pin. The resistor limits current to ~14mA, within the 40mA per-pin limit of the Mega 2560. Without it, the LED can burn out or damage the pin.",
-                        "Run a jumper wire from the resistor's free end to the Arduino digital pin (11, 12, or 13).",
-                        "Run a jumper wire from the LED's cathode to any GND pin on the Arduino.",
-                    ].map((step, i) => (
+                        {
+                            text: "Place the LED on the breadboard. LEDs are polarized — the longer leg (anode, +) connects toward the Arduino; the shorter leg (cathode, −) connects to ground.",
+                            image: null,
+                        },
+                        {
+                            text: "Place a 220 ohm resistor on the breadboard for each LED, connecting one leg to the LED's anode. Run a single jumper wire from the Arduino's GND pin to the breadboard's ground rail. The resistor limits current to ~14mA, within the 40mA per-pin limit of the Mega 2560. Without it, the LED can burn out or damage the pin.",
+                            image: {
+                                src: "https://raw.githubusercontent.com/miguel-wgu/LED_Traffic_Light/main/docs/LED_Traffic_Light-1.jpg",
+                                alt: "Arduino ground connected to breadboard ground rail, with 3 resistors and 3 LEDs wired in place",
+                            },
+                        },
+                        {
+                            text: "Run a jumper wire from the resistor's free end to the Arduino digital pin (11, 12, or 13).",
+                            image: {
+                                src: "https://raw.githubusercontent.com/miguel-wgu/LED_Traffic_Light/main/docs/LED_Traffic_Light-2.jpg",
+                                alt: "Jumper wires added from the resistors to Arduino pins 13, 12, and 11",
+                            },
+                        },
+                        {
+                            text: "Run a jumper wire from each LED's cathode to a slot in the breadboard's ground rail.",
+                            image: {
+                                src: "https://raw.githubusercontent.com/miguel-wgu/LED_Traffic_Light/main/docs/LED_Traffic_Light-3.jpg",
+                                alt: "Ground wires added from each LED cathode to the breadboard ground rail, completing the circuit",
+                            },
+                        },
+                        {
+                            text: (
+                                <>
+                                    Power the Arduino via USB or battery (if the code is already uploaded) and
+                                    watch the LEDs cycle. See the{" "}
+                                    <a href="#demo-gif" className="text-emerald-400 hover:text-emerald-300 transition-colors">
+                                        demo at the top
+                                    </a>{" "}
+                                    for what to expect.
+                                </>
+                            ),
+                            image: null,
+                        },
+                    ].map(({ text, image }, i) => (
                         <li key={i} className="flex gap-3">
                             <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-zinc-700 bg-zinc-800 text-xs font-mono text-zinc-400">
                                 {i + 1}
                             </span>
-                            <span>{step}</span>
+                            <span className="flex-1">
+                                {text}
+                                {image && <ClickableImage src={image.src} alt={image.alt} />}
+                            </span>
                         </li>
                     ))}
                 </ol>
@@ -295,11 +333,10 @@ export default function LEDTrafficLightPage() {
                         "Plan the circuit in Tinkercad before touching real hardware.",
                         "Set up CLion and install the PlatformIO plugin.",
                         "Create a new PlatformIO project targeting megaatmega2560.",
-                        "Wire the three LEDs with resistors to pins 11, 12, and 13.",
+                        "Wire the components as covered in the Wiring section above.",
                         "Write setup() to configure the pins as outputs.",
                         "Write loop() with the traffic light timing sequence.",
-                        "Build and upload via PlatformIO (Upload button or pio run --target upload).",
-                        "Verify the LEDs cycle correctly on the board.",
+                        "Build and upload via PlatformIO (Upload button or pio run --target upload), then power on and confirm the LEDs cycle correctly.",
                     ].map((step, i) => (
                         <li key={i} className="flex gap-3">
                             <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-emerald-500/30 bg-emerald-500/10 text-xs font-mono text-emerald-400">

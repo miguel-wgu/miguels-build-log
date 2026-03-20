@@ -77,9 +77,10 @@ See the [Tinkercad diagram](https://www.tinkercad.com/things/kvZEJ7QVY8S-led-tra
 ### Steps (repeat for each LED)
 
 1. Place the LED on the breadboard. LEDs are polarized — the **longer leg** (anode, +) connects toward the Arduino; the **shorter leg** (cathode, −) connects to ground.
-2. Connect a **220 ohm resistor** between the LED's anode and the Arduino pin. The resistor limits current to ~14mA, which is within the 40mA per-pin limit of the Mega 2560. Without it, the LED can burn out or damage the pin.
+2. Place a **220 ohm resistor** on the breadboard for each LED, connecting one leg to the LED's anode. Run a single jumper wire from the Arduino's GND pin to the breadboard's ground rail. The resistor limits current to ~14mA, within the 40mA per-pin limit of the Mega 2560. Without it, the LED can burn out or damage the pin.
 3. Run a jumper wire from the resistor's free end to the Arduino digital pin (11, 12, or 13).
-4. Run a jumper wire from the LED's cathode to any GND pin on the Arduino.
+4. Run a jumper wire from each LED's cathode to a slot in the breadboard's ground rail.
+5. Power the Arduino via USB or battery (if the code is already uploaded) and watch the LEDs cycle.
 
 > If an LED doesn't light up, check polarity first. Flip it around — it costs nothing and is almost always the issue.
 
@@ -90,11 +91,10 @@ See the [Tinkercad diagram](https://www.tinkercad.com/things/kvZEJ7QVY8S-led-tra
 1. Plan the circuit in Tinkercad before touching real hardware.
 2. Set up CLion and install the PlatformIO plugin.
 3. Create a new PlatformIO project targeting `megaatmega2560`.
-4. Wire the three LEDs with resistors to pins 11, 12, and 13.
+4. Wire the components as covered in the Wiring section above.
 5. Write `setup()` to configure the pins as outputs.
 6. Write `loop()` with the traffic light timing sequence.
-7. Build and upload via PlatformIO (`Upload` button or `pio run --target upload`).
-8. Verify the LEDs cycle correctly on the board.
+7. Build and upload via PlatformIO (`Upload` button or `pio run --target upload`), then power on and confirm the LEDs cycle correctly.
 
 ---
 
@@ -175,9 +175,9 @@ void loop() {
 
 ---
 
-## Images & Diagrams to Add
+## Images & Diagrams
 
+- [x] GIF of the LEDs cycling through the sequence (`docs/LED Cycle.gif`)
+- [x] Step-by-step breadboard photos (`docs/LED_Traffic_Light-1.jpg` through `-3.jpg`)
 - [ ] Tinkercad wiring diagram screenshot (`docs/Tinkercad Wiring Diagram.png`)
 - [ ] Schematic (`docs/Schematic.pdf`)
-- [ ] Photo of the finished breadboard build
-- [ ] Short GIF or video of the LEDs cycling through the sequence

@@ -47,15 +47,15 @@ public/                     # Static assets (images, icons) — referenced as /f
 
 ## Where to update things
 
-| What | Where |
-|---|---|
-| Site title / meta description | `metadata` export in `src/app/layout.tsx` |
-| Nav links | `<nav>` in `src/app/layout.tsx` |
-| Footer text | `<footer>` in `src/app/layout.tsx` |
-| Global colors / fonts / CSS variables | `src/app/globals.css` |
-| Home page content | `src/app/page.tsx` |
-| Projects list | `src/app/projects/page.tsx` |
-| Individual project content | `src/app/projects/[slug]/page.tsx` |
+| What                                  | Where                                     |
+|---------------------------------------|-------------------------------------------|
+| Site title / meta description         | `metadata` export in `src/app/layout.tsx` |
+| Nav links                             | `<nav>` in `src/app/layout.tsx`           |
+| Footer text                           | `<footer>` in `src/app/layout.tsx`        |
+| Global colors / fonts / CSS variables | `src/app/globals.css`                     |
+| Home page content                     | `src/app/page.tsx`                        |
+| Projects list                         | `src/app/projects/page.tsx`               |
+| Individual project content            | `src/app/projects/[slug]/page.tsx`        |
 
 ---
 
@@ -93,9 +93,9 @@ The site is deployed on [Vercel](https://vercel.com) and auto-deploys on every p
 
 ## Tech stack
 
-| Tool | Purpose |
-|---|---|
-| [Next.js 16](https://nextjs.org) | React framework with file-based routing |
-| [TypeScript](https://www.typescriptlang.org) | Type safety |
-| [Tailwind CSS v4](https://tailwindcss.com) | Utility-first styling |
-| [Geist](https://vercel.com/font) | Sans-serif and mono fonts |
+| Tool                                         | Purpose                                 |
+|----------------------------------------------|-----------------------------------------|
+| [Next.js 16](https://nextjs.org)             | React framework with file-based routing |
+| [TypeScript](https://www.typescriptlang.org) | Type safety                             |
+| [Tailwind CSS v4](https://tailwindcss.com)   | Utility-first styling                   |
+| [Geist](https://vercel.com/font)             | Sans-serif and mono fonts               |

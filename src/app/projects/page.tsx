@@ -13,7 +13,7 @@ const projects = [
         slug: "led-traffic-light",
         title: "LED Traffic Light System",
         platform: "Arduino",
-        status: "In Progress" as const,
+        status: "Complete" as const,
         description:
             "Cycles through green, yellow, and red LEDs to simulate a real traffic light. Covers PlatformIO setup, circuit wiring, and a full C++ code walkthrough.",
         github: "https://github.com/miguel-wgu/LED_Traffic_Light",
