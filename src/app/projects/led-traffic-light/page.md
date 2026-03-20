@@ -179,5 +179,5 @@ void loop() {
 
 - [x] GIF of the LEDs cycling through the sequence (`docs/LED Cycle.gif`)
 - [x] Step-by-step breadboard photos (`docs/LED_Traffic_Light-1.jpg` through `-3.jpg`)
-- [ ] Tinkercad wiring diagram screenshot (`docs/Tinkercad Wiring Diagram.png`)
-- [ ] Schematic (`docs/Schematic.pdf`)
+- [x] Tinkercad wiring diagram screenshot (`docs/Tinkercad Wiring Diagram.png`)
+- [x] Schematic (`docs/Schematic.pdf`)
